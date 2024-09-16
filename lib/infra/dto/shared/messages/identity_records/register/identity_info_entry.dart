@@ -1,6 +1,6 @@
 import 'dart:typed_data';
 
-import 'package:cryptography_utils/cryptography_utils.dart';
+import 'package:codec_utils/codec_utils.dart';
 import 'package:equatable/equatable.dart';
 
 /// Single identity record info. Used in MsgRegisterIdentityRecords

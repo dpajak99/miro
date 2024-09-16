@@ -173,7 +173,13 @@ dependencies:
   cryptography_utils:
     git:
       url: https://github.com/snggle/cryptography_utils.git
-      ref: dp-feature/cosmos-signing
+      ref: dp-feature/cosmos-signing-exported
+
+  # Dart package containing utility methods for data encoding and decoding.
+  codec_utils:
+    git:
+      url: https://github.com/snggle/codec_utils.git
+      ref: dp-feature/protobuf-encoder
 
 dev_dependencies:
   # AutoRoute is a declarative routing solution, where everything needed for navigation is automatically generated for you.

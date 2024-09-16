@@ -1,4 +1,4 @@
-import 'package:cryptography_utils/cryptography_utils.dart';
+import 'package:codec_utils/codec_utils.dart';
 import 'package:miro/infra/dto/shared/messages/identity_records/msg_cancel_identity_records_verify_request.dart';
 import 'package:miro/infra/dto/shared/messages/identity_records/msg_delete_identity_records.dart';
 import 'package:miro/infra/dto/shared/messages/identity_records/msg_handle_identity_records_verify_request.dart';

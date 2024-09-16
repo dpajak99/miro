@@ -1,5 +1,6 @@
 import 'dart:typed_data';
 
+import 'package:codec_utils/codec_utils.dart';
 import 'package:cryptography_utils/cryptography_utils.dart';
 import 'package:miro/infra/dto/shared/messages/a_tx_msg.dart';
 import 'package:miro/infra/dto/shared/messages/identity_records/register/identity_info_entry.dart';
