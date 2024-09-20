@@ -26,7 +26,7 @@ class UndelegationModel extends AListItem {
       id: undelegation.id,
       lockedUntil: CustomDateUtils.buildDateFromSecondsSinceEpoch(int.parse(undelegation.expiry)),
       validatorSimplifiedModel: ValidatorSimplifiedModel(
-        walletAddress: WalletAddress.fromBech32(undelegation.validatorInfo.address),
+        walletAddress: WalletAddress.fromAddress(undelegation.validatorInfo.address),
         moniker: undelegation.validatorInfo.moniker,
         logo: undelegation.validatorInfo.logo,
         valkey: undelegation.validatorInfo.valkey,

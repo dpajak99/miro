@@ -40,7 +40,7 @@ class DecryptedKeyfileModel extends Equatable {
 
   String get fileName {
     Wallet wallet = keyfileSecretDataModel.wallet;
-    return 'keyfile_${wallet.address.buildBech32AddressShort(delimiter: '_')}.json';
+    return 'keyfile_${wallet.address.buildShortAddress(delimiter: '_')}.json';
   }
 
   @override

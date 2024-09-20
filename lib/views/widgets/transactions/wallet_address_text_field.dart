@@ -63,7 +63,7 @@ class _WalletAddressTextField extends State<WalletAddressTextField> {
                     valueListenable: walletAddressNotifier,
                     builder: (_, WalletAddress? walletAddress, __) {
                       return KiraIdentityAvatar(
-                        address: walletAddressNotifier.value?.bech32Address,
+                        address: walletAddressNotifier.value?.address,
                         size: 45,
                       );
                     },
@@ -101,7 +101,7 @@ class _WalletAddressTextField extends State<WalletAddressTextField> {
   void _assignDefaultValues() {
     if (widget.defaultWalletAddress != null) {
       walletAddressNotifier.value = widget.defaultWalletAddress;
-      textEditingController.text = widget.defaultWalletAddress!.bech32Address;
+      textEditingController.text = widget.defaultWalletAddress!.address;
     }
   }
 
@@ -131,7 +131,7 @@ class _WalletAddressTextField extends State<WalletAddressTextField> {
       return null;
     }
     try {
-      return WalletAddress.fromBech32(address);
+      return WalletAddress.fromAddress(address);
     } catch (e) {
       return null;
     }

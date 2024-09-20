@@ -24,7 +24,7 @@ Future<void> main() async {
       Uri networkUri = NetworkUtils.parseUrlToInterxUri('https://healthy.kira.network/');
       await TestUtils.setupNetworkModel(networkUri: networkUri);
 
-      WalletAddress actualValidatorWalletAddress = WalletAddress.fromBech32('kira1c6slygj2tx7hzm0mn4qeflqpvngj73c2tgz20j');
+      WalletAddress actualValidatorWalletAddress = WalletAddress.fromAddress('kira1c6slygj2tx7hzm0mn4qeflqpvngj73c2tgz20j');
 
       // Act
       StakingPoolModel actualStakingPoolModel = await actualQueryStakingPoolService.getStakingPoolModel(actualValidatorWalletAddress);
@@ -56,7 +56,7 @@ Future<void> main() async {
       Uri networkUri = NetworkUtils.parseUrlToInterxUri('https://invalid.kira.network/');
       await TestUtils.setupNetworkModel(networkUri: networkUri);
 
-      WalletAddress actualValidatorWalletAddress = WalletAddress.fromBech32('kira1c6slygj2tx7hzm0mn4qeflqpvngj73c2tgz20j');
+      WalletAddress actualValidatorWalletAddress = WalletAddress.fromAddress('kira1c6slygj2tx7hzm0mn4qeflqpvngj73c2tgz20j');
 
       // Assert
       expect(
@@ -70,7 +70,7 @@ Future<void> main() async {
       Uri networkUri = NetworkUtils.parseUrlToInterxUri('https://offline.kira.network/');
       await TestUtils.setupNetworkModel(networkUri: networkUri);
 
-      WalletAddress actualValidatorWalletAddress = WalletAddress.fromBech32('kira1c6slygj2tx7hzm0mn4qeflqpvngj73c2tgz20j');
+      WalletAddress actualValidatorWalletAddress = WalletAddress.fromAddress('kira1c6slygj2tx7hzm0mn4qeflqpvngj73c2tgz20j');
 
       // Assert
       expect(

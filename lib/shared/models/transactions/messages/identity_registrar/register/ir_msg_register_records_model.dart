@@ -27,14 +27,14 @@ class IRMsgRegisterRecordsModel extends ATxMsgModel {
   factory IRMsgRegisterRecordsModel.fromDto(MsgRegisterIdentityRecords msgRegisterIdentityRecords) {
     return IRMsgRegisterRecordsModel(
       irEntryModels: msgRegisterIdentityRecords.infos.map(IREntryModel.fromDto).toList(),
-      walletAddress: WalletAddress.fromBech32(msgRegisterIdentityRecords.address.value),
+      walletAddress: WalletAddress.fromAddress(msgRegisterIdentityRecords.address.value),
     );
   }
 
   @override
   MsgRegisterIdentityRecords toMsgDto() {
     return MsgRegisterIdentityRecords(
-      address: CosmosAccAddress(walletAddress.bech32Address),
+      address: CosmosAccAddress(walletAddress.address),
       infos: irEntryModels.map((IREntryModel irEntryModel) => irEntryModel.toDto()).toList(),
     );
   }

@@ -68,7 +68,7 @@ class IdentityRegistrarCubit extends Cubit<AIdentityRegistrarState> {
         ));
       }
     } catch (e) {
-      AppLogger().log(message: 'Cannot fetch identity records for wallet address ${walletAddress!.bech32Address}: Reason: ${e.runtimeType}');
+      AppLogger().log(message: 'Cannot fetch identity records for wallet address ${walletAddress!.address}: Reason: ${e.runtimeType}');
       if (networkChangedBool) {
         emit(IdentityRegistrarLoadedState(irModel: IRModel.empty(walletAddress: walletAddress!)));
       }

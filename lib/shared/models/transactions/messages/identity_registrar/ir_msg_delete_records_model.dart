@@ -26,7 +26,7 @@ class IRMsgDeleteRecordsModel extends ATxMsgModel {
   factory IRMsgDeleteRecordsModel.fromDto(MsgDeleteIdentityRecords msgDeleteIdentityRecords) {
     return IRMsgDeleteRecordsModel(
       keys: msgDeleteIdentityRecords.keys,
-      walletAddress: WalletAddress.fromBech32(msgDeleteIdentityRecords.address.value),
+      walletAddress: WalletAddress.fromAddress(msgDeleteIdentityRecords.address.value),
     );
   }
 
@@ -34,7 +34,7 @@ class IRMsgDeleteRecordsModel extends ATxMsgModel {
   MsgDeleteIdentityRecords toMsgDto() {
     return MsgDeleteIdentityRecords(
       keys: keys,
-      address: CosmosAccAddress(walletAddress.bech32Address),
+      address: CosmosAccAddress(walletAddress.address),
     );
   }
 

@@ -50,9 +50,9 @@ class _StakingMsgDelegateFormPreviewState extends State<StakingMsgDelegateFormPr
       children: <Widget>[
         TxInputPreview(
           label: S.of(context).txHintStakeBy,
-          value: msgDelegateModel.delegatorWalletAddress.bech32Address,
+          value: msgDelegateModel.delegatorWalletAddress.address,
           icon: KiraIdentityAvatar(
-            address: msgDelegateModel.delegatorWalletAddress.bech32Address,
+            address: msgDelegateModel.delegatorWalletAddress.address,
             size: 45,
           ),
         ),
@@ -61,7 +61,7 @@ class _StakingMsgDelegateFormPreviewState extends State<StakingMsgDelegateFormPr
           label: S.of(context).txHintStakeOn,
           value: widget.moniker,
           icon: KiraIdentityAvatar(
-            address: widget.validatorWalletAddress.bech32Address,
+            address: widget.validatorWalletAddress.address,
             size: 45,
           ),
         ),

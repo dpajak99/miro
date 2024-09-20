@@ -1,5 +1,6 @@
 import 'package:cryptography_utils/cryptography_utils.dart';
 import 'package:equatable/equatable.dart';
+import 'package:miro/shared/models/wallet/cosmos_wallet_address.dart';
 import 'package:miro/shared/models/wallet/mnemonic.dart' as miro;
 import 'package:miro/shared/models/wallet/wallet_address.dart';
 
@@ -36,7 +37,7 @@ class Wallet extends Equatable {
     );
 
     return Wallet(
-      address: WalletAddress.fromPublicKey(legacyHDWallet.publicKey.compressed),
+      address: CosmosWalletAddress.fromPublicKey(legacyHDWallet.publicKey.compressed),
       ecPrivateKey: (legacyHDWallet.privateKey as Secp256k1PrivateKey).ecPrivateKey,
     );
   }

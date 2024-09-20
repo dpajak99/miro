@@ -42,8 +42,8 @@ Future<void> main() async {
         tokenAliasModel: TokenAliasModel.local('ukex'),
       ),
       txMsgModel: MsgSendModel(
-        fromWalletAddress: WalletAddress.fromBech32('kira143q8vxpvuykt9pq50e6hng9s38vmy844n8k9wx'),
-        toWalletAddress: WalletAddress.fromBech32('kira177lwmjyjds3cy7trers83r4pjn3dhv8zrqk9dl'),
+        fromWalletAddress: WalletAddress.fromAddress('kira143q8vxpvuykt9pq50e6hng9s38vmy844n8k9wx'),
+        toWalletAddress: WalletAddress.fromAddress('kira177lwmjyjds3cy7trers83r4pjn3dhv8zrqk9dl'),
         tokenAmountModel: TokenAmountModel(
           defaultDenominationAmount: Decimal.fromInt(100),
           tokenAliasModel: TokenAliasModel.local('ukex'),

@@ -8,8 +8,8 @@ import 'package:miro/shared/models/transactions/messages/msg_send_model.dart';
 import 'package:miro/shared/models/wallet/wallet_address.dart';
 
 void main() {
-  WalletAddress actualSenderAddress = WalletAddress.fromBech32('kira143q8vxpvuykt9pq50e6hng9s38vmy844n8k9wx');
-  WalletAddress actualRecipientAddress = WalletAddress.fromBech32('kira177lwmjyjds3cy7trers83r4pjn3dhv8zrqk9dl');
+  WalletAddress actualSenderAddress = WalletAddress.fromAddress('kira143q8vxpvuykt9pq50e6hng9s38vmy844n8k9wx');
+  WalletAddress actualRecipientAddress = WalletAddress.fromAddress('kira177lwmjyjds3cy7trers83r4pjn3dhv8zrqk9dl');
   TokenAmountModel actualTokenAmountModel = TokenAmountModel(
     defaultDenominationAmount: Decimal.fromInt(100),
     tokenAliasModel: TokenAliasModel.local('ukex'),

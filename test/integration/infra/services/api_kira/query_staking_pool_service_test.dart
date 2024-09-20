@@ -21,7 +21,7 @@ Future<void> main() async {
 
   group('Tests of QueryStakingPoolService.getStakingPoolModel() method', () {
     test('Should return [StakingPoolModel]', () async {
-      WalletAddress actualValidatorWalletAddress = WalletAddress.fromBech32('kira1c6slygj2tx7hzm0mn4qeflqpvngj73c2tgz20j');
+      WalletAddress actualValidatorWalletAddress = WalletAddress.fromAddress('kira1c6slygj2tx7hzm0mn4qeflqpvngj73c2tgz20j');
 
       TestUtils.printInfo('Data request');
       try {

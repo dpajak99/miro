@@ -6,7 +6,7 @@ import 'package:miro/shared/models/transactions/messages/identity_registrar/ir_m
 import 'package:miro/shared/models/wallet/wallet_address.dart';
 
 void main() {
-  WalletAddress actualSenderAddress = WalletAddress.fromBech32('kira143q8vxpvuykt9pq50e6hng9s38vmy844n8k9wx');
+  WalletAddress actualSenderAddress = WalletAddress.fromAddress('kira143q8vxpvuykt9pq50e6hng9s38vmy844n8k9wx');
 
   group('Tests of IRMsgDeleteRecordsFormModel.canBuildTxMsg()', () {
     test('Should [return TRUE] if all required form fields are filled', () {

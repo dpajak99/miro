@@ -48,9 +48,9 @@ class _StakingMsgClaimUndelegationFormPreviewState extends State<StakingMsgClaim
       children: <Widget>[
         TxInputPreview(
           label: S.of(context).txHintClaimBy,
-          value: stakingMsgClaimUndelegationModel.senderWalletAddress.bech32Address,
+          value: stakingMsgClaimUndelegationModel.senderWalletAddress.address,
           icon: KiraIdentityAvatar(
-            address: stakingMsgClaimUndelegationModel.senderWalletAddress.bech32Address,
+            address: stakingMsgClaimUndelegationModel.senderWalletAddress.address,
             size: 45,
           ),
         ),

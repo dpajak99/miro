@@ -34,7 +34,7 @@ class StakingMsgUndelegateModel extends ATxMsgModel {
   factory StakingMsgUndelegateModel.fromMsgDto(MsgUndelegate msgUndelegate) {
     return StakingMsgUndelegateModel(
       valkey: msgUndelegate.valoperAddress,
-      delegatorWalletAddress: WalletAddress.fromBech32(msgUndelegate.delegatorAddress),
+      delegatorWalletAddress: WalletAddress.fromAddress(msgUndelegate.delegatorAddress),
       tokenAmountModels: msgUndelegate.amounts
           .map((CosmosCoin coin) => TokenAmountModel(
                 defaultDenominationAmount: Decimal.fromBigInt(coin.amount),
@@ -47,7 +47,7 @@ class StakingMsgUndelegateModel extends ATxMsgModel {
   @override
   ATxMsg toMsgDto() {
     return MsgUndelegate(
-      delegatorAddress: delegatorWalletAddress.bech32Address,
+      delegatorAddress: delegatorWalletAddress.address,
       valoperAddress: valkey,
       amounts: tokenAmountModels.map((TokenAmountModel tokenAmountModel) {
         return CosmosCoin(

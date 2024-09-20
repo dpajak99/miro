@@ -42,7 +42,7 @@ class IRModel extends Equatable {
     for (Record record in records) {
       List<WalletAddress> pendingVerifiersAddresses = pendingVerifications
           .where((PendingVerification pendingVerification) => pendingVerification.recordIds.contains(record.id))
-          .map((PendingVerification pendingVerification) => WalletAddress.fromBech32(pendingVerification.verifierAddress))
+          .map((PendingVerification pendingVerification) => WalletAddress.fromAddress(pendingVerification.verifierAddress))
           .toSet()
           .toList();
 
@@ -84,7 +84,7 @@ class IRModel extends Equatable {
         otherIRRecordModelList.isEmpty;
   }
 
-  String get name => usernameIRRecordModel.value ?? walletAddress.buildBech32AddressShort(delimiter: '_');
+  String get name => usernameIRRecordModel.value ?? walletAddress.buildShortAddress(delimiter: '_');
 
   @override
   List<Object?> get props => <Object?>[

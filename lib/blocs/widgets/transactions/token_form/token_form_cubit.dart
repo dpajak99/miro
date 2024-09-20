@@ -105,7 +105,7 @@ class TokenFormCubit extends Cubit<TokenFormState> {
   Future<void> _initWithFirstBalance(FilterOption<BalanceModel>? filterOption) async {
     try {
       PageData<BalanceModel> balanceModelData = await queryBalanceService.getBalanceModelList(QueryBalanceReq(
-        address: state.walletAddress!.bech32Address,
+        address: state.walletAddress!.address,
         offset: 0,
         limit: 500,
       ));

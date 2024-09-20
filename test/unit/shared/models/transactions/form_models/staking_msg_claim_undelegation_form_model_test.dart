@@ -5,7 +5,7 @@ import 'package:miro/shared/models/transactions/messages/staking/staking_msg_cla
 import 'package:miro/shared/models/wallet/wallet_address.dart';
 
 void main() {
-  WalletAddress actualSenderWalletAddress = WalletAddress.fromBech32('kira143q8vxpvuykt9pq50e6hng9s38vmy844n8k9wx');
+  WalletAddress actualSenderWalletAddress = WalletAddress.fromAddress('kira143q8vxpvuykt9pq50e6hng9s38vmy844n8k9wx');
 
   group('Tests of StakingMsgClaimUndelegationFormModel.canBuildTxMsg()', () {
     test('Should [return TRUE] if required form field is filled', () {

@@ -46,7 +46,7 @@ class IdentityRecordsService implements _IIdentityRecordsService {
 
     Response<dynamic> response = await _apiKiraRepository.fetchQueryIdentityRecordsByAddress<dynamic>(ApiRequestModel<String>(
       networkUri: networkUri,
-      requestData: walletAddress.bech32Address,
+      requestData: walletAddress.address,
       forceRequestBool: forceRequestBool,
     ));
     List<PendingVerification> pendingVerifications = await _getAllPendingVerificationsByRequester(walletAddress, forceRequestBool: forceRequestBool);
@@ -94,14 +94,14 @@ class IdentityRecordsService implements _IIdentityRecordsService {
     List<WalletAddress> requesterAddressList = queryIdentityRecordVerifyRequestsByApproverResp.verifyRecords
         .map((VerifyRecord verifyRecord) => verifyRecord.address)
         .toSet()
-        .map(WalletAddress.fromBech32)
+        .map(WalletAddress.fromAddress)
         .toList();
 
     Map<WalletAddress, IRUserProfileModel> irUserProfileModelsMap = await _getUserProfilesByAddresses(requesterAddressList);
 
     for (VerifyRecord verifyRecord in queryIdentityRecordVerifyRequestsByApproverResp.verifyRecords) {
       Map<String, String> records = await _getRecordKeyValuePairsById(verifyRecord.recordIds);
-      WalletAddress requesterWalletAddress = WalletAddress.fromBech32(verifyRecord.address);
+      WalletAddress requesterWalletAddress = WalletAddress.fromAddress(verifyRecord.address);
 
       IRInboundVerificationRequestModel irInboundVerificationRequestModel = IRInboundVerificationRequestModel(
         id: verifyRecord.id,
@@ -157,7 +157,7 @@ class IdentityRecordsService implements _IIdentityRecordsService {
         ApiRequestModel<QueryIdentityRecordVerifyRequestsByRequesterReq>(
           networkUri: networkUri,
           requestData: QueryIdentityRecordVerifyRequestsByRequesterReq(
-            address: requesterWalletAddress.bech32Address,
+            address: requesterWalletAddress.address,
             offset: index * pageSize,
             limit: pageSize,
           ),

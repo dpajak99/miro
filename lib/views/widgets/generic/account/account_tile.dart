@@ -59,17 +59,17 @@ class _AccountTile extends State<AccountTile> {
     return AccountTileLayout(
       addressVisibleBool: widget.addressVisibleBool,
       avatarWidget: KiraIdentityAvatar(
-        address: widget.walletAddress.bech32Address,
+        address: widget.walletAddress.address,
         avatarUrl: widget.avatarUrl,
         size: widget.size,
       ),
       usernameWidget: Text(
-        widget.username ?? widget.walletAddress.buildBech32AddressShort(delimiter: '...'),
+        widget.username ?? widget.walletAddress.buildShortAddress(delimiter: '...'),
         overflow: TextOverflow.ellipsis,
         style: widget.usernameTextStyle ?? textTheme.bodyMedium!.copyWith(color: DesignColors.white1),
       ),
       addressWidget: Text(
-        widget.walletAddress.buildBech32AddressShort(delimiter: '...'),
+        widget.walletAddress.buildShortAddress(delimiter: '...'),
         maxLines: 1,
         softWrap: true,
         overflow: TextOverflow.ellipsis,

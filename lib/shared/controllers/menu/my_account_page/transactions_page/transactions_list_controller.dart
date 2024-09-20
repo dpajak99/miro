@@ -39,7 +39,7 @@ class TransactionsListController implements IListController<TxListItemModel> {
   Future<PageData<TxListItemModel>> getPageData(PaginationDetailsModel paginationDetailsModel, {bool forceRequestBool = false}) async {
     PageData<TxListItemModel> transactionsPageData = await queryTransactionsService.getTransactionList(
       QueryTransactionsReq(
-        address: walletAddress.bech32Address,
+        address: walletAddress.address,
         limit: paginationDetailsModel.limit,
         offset: paginationDetailsModel.offset,
         sort: TxSortType.dateDESC,

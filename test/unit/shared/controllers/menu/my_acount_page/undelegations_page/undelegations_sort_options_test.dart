@@ -9,7 +9,7 @@ import 'package:miro/shared/models/wallet/wallet_address.dart';
 
 void main() {
   final ValidatorSimplifiedModel validatorSimplifiedModel = ValidatorSimplifiedModel(
-    walletAddress: WalletAddress.fromBech32('kira1ymx5gpvswq0cmj6zkdxwa233sdgq2k5zzfge8w'),
+    walletAddress: WalletAddress.fromAddress('kira1ymx5gpvswq0cmj6zkdxwa233sdgq2k5zzfge8w'),
     moniker: 'GENESIS VALIDATOR',
     website: 'https://www.wp.pl/',
   );

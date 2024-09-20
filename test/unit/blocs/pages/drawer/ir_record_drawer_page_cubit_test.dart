@@ -18,7 +18,7 @@ Future<void> main() async {
   await initMockLocator();
 
   final IRUserProfileModel expectedIrUserProfileModel = IRUserProfileModel(
-    walletAddress: WalletAddress.fromBech32('kira177lwmjyjds3cy7trers83r4pjn3dhv8zrqk9dl'),
+    walletAddress: WalletAddress.fromAddress('kira177lwmjyjds3cy7trers83r4pjn3dhv8zrqk9dl'),
     username: 'somnitear',
     avatarUrl: 'https://avatars.githubusercontent.com/u/114292385',
   );
@@ -32,7 +32,7 @@ Future<void> main() async {
         value: 'somnitear',
         verifiersAddresses: const <WalletAddress>[],
         pendingVerifiersAddresses: <WalletAddress>[
-          WalletAddress.fromBech32('kira177lwmjyjds3cy7trers83r4pjn3dhv8zrqk9dl'),
+          WalletAddress.fromAddress('kira177lwmjyjds3cy7trers83r4pjn3dhv8zrqk9dl'),
         ],
       );
       IRRecordDrawerPageCubit actualIrRecordDrawerPageCubit = IRRecordDrawerPageCubit(irRecordModel: actualIrRecordModel);

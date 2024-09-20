@@ -16,7 +16,7 @@ class ValidatorDrawerPageCubit extends Cubit<AValidatorDrawerPageState> {
   Future<void> init(String validatorAddress) async {
     try {
       emit(const ValidatorDrawerPageLoadingState());
-      StakingPoolModel stakingPoolModel = await _queryStakingPoolService.getStakingPoolModel(WalletAddress.fromBech32(validatorAddress));
+      StakingPoolModel stakingPoolModel = await _queryStakingPoolService.getStakingPoolModel(WalletAddress.fromAddress(validatorAddress));
       emit(ValidatorDrawerPageLoadedState(stakingPoolModel: stakingPoolModel));
     } catch (e) {
       emit(const ValidatorDrawerPageErrorState());

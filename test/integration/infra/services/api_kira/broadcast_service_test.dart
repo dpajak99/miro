@@ -60,7 +60,7 @@ Future<void> main() async {
 
   Future<SignedTxModel> signTx(TxLocalInfoModel actualTxLocalInfoModel, Wallet wallet) async {
     try {
-      final TxRemoteInfoModel txRemoteInfoModel = await queryAccountService.getTxRemoteInfo(wallet.address.bech32Address);
+      final TxRemoteInfoModel txRemoteInfoModel = await queryAccountService.getTxRemoteInfo(wallet.address.address);
       final UnsignedTxModel actualUnsignedTxModel = UnsignedTxModel(
         txLocalInfoModel: actualTxLocalInfoModel,
         txRemoteInfoModel: txRemoteInfoModel,

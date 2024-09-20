@@ -61,14 +61,14 @@ void main() {
       // Assert
       expectedIdentityRegistrarState = IdentityRegistrarLoadedState(
         irModel: IRModel(
-          walletAddress: WalletAddress.fromBech32('kira143q8vxpvuykt9pq50e6hng9s38vmy844n8k9wx'),
+          walletAddress: WalletAddress.fromAddress('kira143q8vxpvuykt9pq50e6hng9s38vmy844n8k9wx'),
           usernameIRRecordModel: IRRecordModel(
             id: '3',
             key: 'username',
             value: 'somnitear',
             verifiersAddresses: const <WalletAddress>[],
             pendingVerifiersAddresses: <WalletAddress>[
-              WalletAddress.fromBech32('kira177lwmjyjds3cy7trers83r4pjn3dhv8zrqk9dl'),
+              WalletAddress.fromAddress('kira177lwmjyjds3cy7trers83r4pjn3dhv8zrqk9dl'),
             ],
           ),
           descriptionIRRecordModel: const IRRecordModel.empty(key: 'description'),
@@ -86,7 +86,7 @@ void main() {
               key: 'github',
               value: 'https://github.com/kiracore',
               verifiersAddresses: <WalletAddress>[
-                WalletAddress.fromBech32('kira177lwmjyjds3cy7trers83r4pjn3dhv8zrqk9dl'),
+                WalletAddress.fromAddress('kira177lwmjyjds3cy7trers83r4pjn3dhv8zrqk9dl'),
               ],
               pendingVerifiersAddresses: const <WalletAddress>[],
             ),

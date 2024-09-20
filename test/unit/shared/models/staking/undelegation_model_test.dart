@@ -10,7 +10,7 @@ import 'package:miro/shared/models/wallet/wallet_address.dart';
 // fvm flutter test test/unit/shared/models/staking/undelegation_model_test.dart --platform chrome --null-assertions
 void main() {
   ValidatorSimplifiedModel actualValidatorSimplifiedModel = ValidatorSimplifiedModel(
-    walletAddress: WalletAddress.fromBech32('kira1qffxre9m4dakekdqlsz9pez95crytqj6q8h457'),
+    walletAddress: WalletAddress.fromAddress('kira1qffxre9m4dakekdqlsz9pez95crytqj6q8h457'),
     logo: 'https://ipfs.kira.network/ipfs/bafybeigjtu7wkkk45c2wqu7ltaxefulpoms3lbv66utmeebgi3wihhvxrq/87e574097f6af25cb04e85a445881dc41d9a07fd.png',
     moniker: 'VaMIROdator',
   );

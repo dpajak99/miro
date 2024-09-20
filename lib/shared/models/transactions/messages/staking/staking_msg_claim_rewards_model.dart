@@ -17,14 +17,14 @@ class StakingMsgClaimRewardsModel extends ATxMsgModel {
 
   factory StakingMsgClaimRewardsModel.fromMsgDto(MsgClaimRewards msgClaimRewards) {
     return StakingMsgClaimRewardsModel(
-      senderWalletAddress: WalletAddress.fromBech32(msgClaimRewards.sender),
+      senderWalletAddress: WalletAddress.fromAddress(msgClaimRewards.sender),
     );
   }
 
   @override
   ATxMsg toMsgDto() {
     return MsgClaimRewards(
-      sender: senderWalletAddress.bech32Address,
+      sender: senderWalletAddress.address,
     );
   }
 
@@ -40,7 +40,7 @@ class StakingMsgClaimRewardsModel extends ATxMsgModel {
 
   @override
   String? getSubtitle(TxDirectionType txDirectionType) {
-    return senderWalletAddress.bech32Address;
+    return senderWalletAddress.address;
   }
 
   @override

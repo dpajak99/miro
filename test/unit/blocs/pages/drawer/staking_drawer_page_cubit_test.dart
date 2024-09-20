@@ -34,7 +34,7 @@ Future<void> main() async {
       // ****************************************************************************************
 
       // Arrange
-      WalletAddress validatorWalletAddress = WalletAddress.fromBech32('kira1fffuhtsuc6qskp4tsy5ptjssshynacj462ptdy');
+      WalletAddress validatorWalletAddress = WalletAddress.fromAddress('kira1fffuhtsuc6qskp4tsy5ptjssshynacj462ptdy');
 
       // Act
       await actualStakingDrawerPageCubit.init(validatorWalletAddress);

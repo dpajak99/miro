@@ -34,7 +34,7 @@ class IRRecordModel extends Equatable {
       id: record.id,
       key: record.key,
       value: StringUtils.parseUnicodeToString(record.value),
-      verifiersAddresses: record.verifiers.map(WalletAddress.fromBech32).toList(),
+      verifiersAddresses: record.verifiers.map(WalletAddress.fromAddress).toList(),
       pendingVerifiersAddresses: pendingVerifiersAddresses,
       dateTime: record.date,
     );

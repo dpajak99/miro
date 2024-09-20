@@ -97,7 +97,7 @@ Future<void> main() async {
 
   Future<UnsignedTxModel> buildUnsignedTxModel(TxLocalInfoModel actualTxLocalInfoModel, Wallet wallet) async {
     // Act
-    TxRemoteInfoModel actualTxRemoteInfoModel = await queryAccountService.getTxRemoteInfo(wallet.address.bech32Address);
+    TxRemoteInfoModel actualTxRemoteInfoModel = await queryAccountService.getTxRemoteInfo(wallet.address.address);
 
     // Assert
     TestUtils.printInfo('Should [return TxRemoteInfoModel] containing address details from INTERX');

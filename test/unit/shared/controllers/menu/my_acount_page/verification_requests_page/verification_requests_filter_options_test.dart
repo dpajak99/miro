@@ -16,13 +16,13 @@ Future<void> main() async {
   await TestUtils.setupNetworkModel(networkUri: Uri.parse('https://healthy.kira.network/'));
 
   final IRUserProfileModel irUserProfileModel1 = IRUserProfileModel(
-    walletAddress: WalletAddress.fromBech32('kira143q8vxpvuykt9pq50e6hng9s38vmy844n8k9wx'),
+    walletAddress: WalletAddress.fromAddress('kira143q8vxpvuykt9pq50e6hng9s38vmy844n8k9wx'),
     username: 'somnitear',
     avatarUrl: 'https://avatars.githubusercontent.com/u/114292385',
   );
 
   final IRUserProfileModel irUserProfileModel2 = IRUserProfileModel(
-    walletAddress: WalletAddress.fromBech32('kira177lwmjyjds3cy7trers83r4pjn3dhv8zrqk9dl'),
+    walletAddress: WalletAddress.fromAddress('kira177lwmjyjds3cy7trers83r4pjn3dhv8zrqk9dl'),
     username: 'marioslaw',
     avatarUrl: 'https://avatars.githubusercontent.com/u/114292385',
   );

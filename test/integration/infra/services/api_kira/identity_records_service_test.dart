@@ -24,7 +24,7 @@ Future<void> main() async {
   await TestUtils.setupNetworkModel(networkUri: networkUri);
 
   final IdentityRecordsService actualIdentityRecordsService = globalLocator<IdentityRecordsService>();
-  final WalletAddress actualWalletAddress = WalletAddress.fromBech32('kira143q8vxpvuykt9pq50e6hng9s38vmy844n8k9wx');
+  final WalletAddress actualWalletAddress = WalletAddress.fromAddress('kira143q8vxpvuykt9pq50e6hng9s38vmy844n8k9wx');
 
   group('Tests of IdentityRecordsService.getIdentityRecordsByAddress() method [GET in HTTP]', () {
     test('Should return [IRModel] with all identity records assigned to selected address', () async {
@@ -52,7 +52,7 @@ Future<void> main() async {
       try {
         PageData<IRInboundVerificationRequestModel> actualVerificationRequestsPageData = await actualIdentityRecordsService.getInboundVerificationRequests(
           QueryIdentityRecordVerifyRequestsByApproverReq(
-            address: actualWalletAddress.bech32Address,
+            address: actualWalletAddress.address,
             offset: 0,
             limit: 10,
           ),

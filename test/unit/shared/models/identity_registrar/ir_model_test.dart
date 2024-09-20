@@ -15,7 +15,7 @@ Future<void> main() async {
     test('Should return [true] if all records are empty', () {
       // Arrange
       IRModel actualIrModel = IRModel(
-        walletAddress: WalletAddress.fromBech32('kira143q8vxpvuykt9pq50e6hng9s38vmy844n8k9wx'),
+        walletAddress: WalletAddress.fromAddress('kira143q8vxpvuykt9pq50e6hng9s38vmy844n8k9wx'),
         avatarIRRecordModel: const IRRecordModel.empty(key: 'avatar'),
         usernameIRRecordModel: const IRRecordModel.empty(key: 'username'),
         descriptionIRRecordModel: const IRRecordModel.empty(key: 'description'),
@@ -32,7 +32,7 @@ Future<void> main() async {
     test('Should return [false] if at least one record exists and is not empty (avatarIRRecordModel)', () {
       // Arrange
       IRModel actualIrModel = IRModel(
-        walletAddress: WalletAddress.fromBech32('kira143q8vxpvuykt9pq50e6hng9s38vmy844n8k9wx'),
+        walletAddress: WalletAddress.fromAddress('kira143q8vxpvuykt9pq50e6hng9s38vmy844n8k9wx'),
         avatarIRRecordModel: const IRRecordModel(
           id: '1',
           key: 'avatar',
@@ -55,7 +55,7 @@ Future<void> main() async {
     test('Should return [false] if at least one record exists and is not empty (usernameIRRecordModel)', () {
       // Arrange
       IRModel actualIrModel = IRModel(
-        walletAddress: WalletAddress.fromBech32('kira143q8vxpvuykt9pq50e6hng9s38vmy844n8k9wx'),
+        walletAddress: WalletAddress.fromAddress('kira143q8vxpvuykt9pq50e6hng9s38vmy844n8k9wx'),
         avatarIRRecordModel: const IRRecordModel.empty(key: 'avatar'),
         usernameIRRecordModel: const IRRecordModel(
           id: '1',
@@ -78,7 +78,7 @@ Future<void> main() async {
     test('Should return [false] if at least one record exists and is not empty (descriptionIRRecordModel)', () {
       // Arrange
       IRModel actualIrModel = IRModel(
-        walletAddress: WalletAddress.fromBech32('kira143q8vxpvuykt9pq50e6hng9s38vmy844n8k9wx'),
+        walletAddress: WalletAddress.fromAddress('kira143q8vxpvuykt9pq50e6hng9s38vmy844n8k9wx'),
         avatarIRRecordModel: const IRRecordModel.empty(key: 'avatar'),
         usernameIRRecordModel: const IRRecordModel.empty(key: 'username'),
         descriptionIRRecordModel: const IRRecordModel(
@@ -101,7 +101,7 @@ Future<void> main() async {
     test('Should return [false] if at least one record exists and is not empty (socialMediaIRRecordModel)', () {
       // Arrange
       IRModel actualIrModel = IRModel(
-        walletAddress: WalletAddress.fromBech32('kira143q8vxpvuykt9pq50e6hng9s38vmy844n8k9wx'),
+        walletAddress: WalletAddress.fromAddress('kira143q8vxpvuykt9pq50e6hng9s38vmy844n8k9wx'),
         avatarIRRecordModel: const IRRecordModel.empty(key: 'avatar'),
         usernameIRRecordModel: const IRRecordModel.empty(key: 'username'),
         descriptionIRRecordModel: const IRRecordModel.empty(key: 'description'),
@@ -124,7 +124,7 @@ Future<void> main() async {
     test('Should return [false] if at least one record exists and is not empty (otherIRRecordModelList)', () {
       // Arrange
       IRModel actualIrModel = IRModel(
-        walletAddress: WalletAddress.fromBech32('kira143q8vxpvuykt9pq50e6hng9s38vmy844n8k9wx'),
+        walletAddress: WalletAddress.fromAddress('kira143q8vxpvuykt9pq50e6hng9s38vmy844n8k9wx'),
         avatarIRRecordModel: const IRRecordModel.empty(key: 'avatar'),
         usernameIRRecordModel: const IRRecordModel.empty(key: 'username'),
         descriptionIRRecordModel: const IRRecordModel.empty(key: 'description'),
@@ -152,7 +152,7 @@ Future<void> main() async {
     test('Should return [username] from identity registrar if [usernameIRRecordModel exists]', () {
       // Arrange
       IRModel actualIrModel = IRModel(
-        walletAddress: WalletAddress.fromBech32('kira143q8vxpvuykt9pq50e6hng9s38vmy844n8k9wx'),
+        walletAddress: WalletAddress.fromAddress('kira143q8vxpvuykt9pq50e6hng9s38vmy844n8k9wx'),
         avatarIRRecordModel: const IRRecordModel.empty(key: 'avatar'),
         usernameIRRecordModel: const IRRecordModel(
           id: '1',
@@ -176,7 +176,7 @@ Future<void> main() async {
     test('Should return [short bech32 address] if [usernameIRRecordModel NOT exists]', () {
       // Arrange
       IRModel actualIrModel = IRModel(
-        walletAddress: WalletAddress.fromBech32('kira143q8vxpvuykt9pq50e6hng9s38vmy844n8k9wx'),
+        walletAddress: WalletAddress.fromAddress('kira143q8vxpvuykt9pq50e6hng9s38vmy844n8k9wx'),
         avatarIRRecordModel: const IRRecordModel.empty(key: 'avatar'),
         usernameIRRecordModel: const IRRecordModel.empty(key: 'username'),
         descriptionIRRecordModel: const IRRecordModel.empty(key: 'description'),

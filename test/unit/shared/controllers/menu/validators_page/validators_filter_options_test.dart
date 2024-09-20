@@ -14,14 +14,14 @@ Future<void> main() async {
   await initMockLocator();
   await TestUtils.setupNetworkModel(networkUri: Uri.parse('https://healthy.kira.network/'));
 
-  WalletAddress walletAddress1 = WalletAddress.fromBech32('kira1fffuhtsuc6qskp4tsy5ptjssshynacj462ptdy');
-  WalletAddress walletAddress2 = WalletAddress.fromBech32('kira1gfqq3kqn7tuhnpph4487d57c00dkptt3hefgkk');
-  WalletAddress walletAddress3 = WalletAddress.fromBech32('kira13hrpqkv53t82n2e72kfr3kuvvvr3565p234g3g');
-  WalletAddress walletAddress4 = WalletAddress.fromBech32('kira1ydv40l75gy83x6lgy3gq08nn5ylxmf2ffs7g97');
-  WalletAddress walletAddress5 = WalletAddress.fromBech32('kira154a6j42c8dtafrnpcxhf6rnemkqh3ehvgrvh6n');
-  WalletAddress walletAddress6 = WalletAddress.fromBech32('kira14pkvvmxx6g7gay7cxl65zseazs0zjhh2vzuu4g');
-  WalletAddress walletAddress7 = WalletAddress.fromBech32('kira19l6sa78vw6sr85ktujy9nps9kq7j3pnmeppkqp');
-  WalletAddress walletAddress8 = WalletAddress.fromBech32('kira1zcptq6kkzp7dcu6a5r9hqd84g8xtrdx3mvnv8s');
+  WalletAddress walletAddress1 = WalletAddress.fromAddress('kira1fffuhtsuc6qskp4tsy5ptjssshynacj462ptdy');
+  WalletAddress walletAddress2 = WalletAddress.fromAddress('kira1gfqq3kqn7tuhnpph4487d57c00dkptt3hefgkk');
+  WalletAddress walletAddress3 = WalletAddress.fromAddress('kira13hrpqkv53t82n2e72kfr3kuvvvr3565p234g3g');
+  WalletAddress walletAddress4 = WalletAddress.fromAddress('kira1ydv40l75gy83x6lgy3gq08nn5ylxmf2ffs7g97');
+  WalletAddress walletAddress5 = WalletAddress.fromAddress('kira154a6j42c8dtafrnpcxhf6rnemkqh3ehvgrvh6n');
+  WalletAddress walletAddress6 = WalletAddress.fromAddress('kira14pkvvmxx6g7gay7cxl65zseazs0zjhh2vzuu4g');
+  WalletAddress walletAddress7 = WalletAddress.fromAddress('kira19l6sa78vw6sr85ktujy9nps9kq7j3pnmeppkqp');
+  WalletAddress walletAddress8 = WalletAddress.fromAddress('kira1zcptq6kkzp7dcu6a5r9hqd84g8xtrdx3mvnv8s');
 
   String valkey1 = 'kiravaloper1fffuhtsuc6qskp4tsy5ptjssshynacj4fvag4g';
   String valkey2 = 'kiravaloper1gfqq3kqn7tuhnpph4487d57c00dkptt3yl4tw6';

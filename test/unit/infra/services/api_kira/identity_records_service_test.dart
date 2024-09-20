@@ -25,26 +25,26 @@ Future<void> main() async {
   await initMockLocator();
 
   final IdentityRecordsService actualIdentityRecordsService = globalLocator<IdentityRecordsService>();
-  final WalletAddress actualWalletAddress = WalletAddress.fromBech32('kira143q8vxpvuykt9pq50e6hng9s38vmy844n8k9wx');
+  final WalletAddress actualWalletAddress = WalletAddress.fromAddress('kira143q8vxpvuykt9pq50e6hng9s38vmy844n8k9wx');
   final IRRecordModel actualIrRecordModel = IRRecordModel(
     id: '3',
     key: 'username',
     value: 'somnitear',
     verifiersAddresses: <WalletAddress>[
-      WalletAddress.fromBech32('kira177lwmjyjds3cy7trers83r4pjn3dhv8zrqk9dl'),
+      WalletAddress.fromAddress('kira177lwmjyjds3cy7trers83r4pjn3dhv8zrqk9dl'),
     ],
     pendingVerifiersAddresses: const <WalletAddress>[],
   );
 
   final IRModel expectedRequesterIRModel = IRModel(
-    walletAddress: WalletAddress.fromBech32('kira143q8vxpvuykt9pq50e6hng9s38vmy844n8k9wx'),
+    walletAddress: WalletAddress.fromAddress('kira143q8vxpvuykt9pq50e6hng9s38vmy844n8k9wx'),
     usernameIRRecordModel: IRRecordModel(
       id: '3',
       key: 'username',
       value: 'somnitear',
       verifiersAddresses: const <WalletAddress>[],
       pendingVerifiersAddresses: <WalletAddress>[
-        WalletAddress.fromBech32('kira177lwmjyjds3cy7trers83r4pjn3dhv8zrqk9dl'),
+        WalletAddress.fromAddress('kira177lwmjyjds3cy7trers83r4pjn3dhv8zrqk9dl'),
       ],
     ),
     descriptionIRRecordModel: const IRRecordModel.empty(key: 'description'),
@@ -62,7 +62,7 @@ Future<void> main() async {
         key: 'github',
         value: 'https://github.com/kiracore',
         verifiersAddresses: <WalletAddress>[
-          WalletAddress.fromBech32('kira177lwmjyjds3cy7trers83r4pjn3dhv8zrqk9dl'),
+          WalletAddress.fromAddress('kira177lwmjyjds3cy7trers83r4pjn3dhv8zrqk9dl'),
         ],
         pendingVerifiersAddresses: const <WalletAddress>[],
       ),
@@ -70,7 +70,7 @@ Future<void> main() async {
   );
 
   final IRUserProfileModel expectedIrUserProfileModel = IRUserProfileModel(
-    walletAddress: WalletAddress.fromBech32('kira177lwmjyjds3cy7trers83r4pjn3dhv8zrqk9dl'),
+    walletAddress: WalletAddress.fromAddress('kira177lwmjyjds3cy7trers83r4pjn3dhv8zrqk9dl'),
     username: 'somnitear',
     avatarUrl: 'https://avatars.githubusercontent.com/u/114292385',
   );
@@ -127,7 +127,7 @@ Future<void> main() async {
 
       // Act
       PageData<IRInboundVerificationRequestModel> actualVerificationRequestsPageData = await actualIdentityRecordsService.getInboundVerificationRequests(
-        QueryIdentityRecordVerifyRequestsByApproverReq(address: actualWalletAddress.bech32Address, offset: 0, limit: 10),
+        QueryIdentityRecordVerifyRequestsByApproverReq(address: actualWalletAddress.address, offset: 0, limit: 10),
       );
 
       // Assert
@@ -160,7 +160,7 @@ Future<void> main() async {
 
         // Act
         PageData<IRInboundVerificationRequestModel> actualVerificationRequestsPageData = await actualIdentityRecordsService.getInboundVerificationRequests(
-          QueryIdentityRecordVerifyRequestsByApproverReq(address: actualWalletAddress.bech32Address, offset: 0, limit: 10),
+          QueryIdentityRecordVerifyRequestsByApproverReq(address: actualWalletAddress.address, offset: 0, limit: 10),
         );
 
         // Assert
@@ -186,7 +186,7 @@ Future<void> main() async {
       // Assert
       expect(
         () => actualIdentityRecordsService.getInboundVerificationRequests(
-          QueryIdentityRecordVerifyRequestsByApproverReq(address: actualWalletAddress.bech32Address, offset: 0, limit: 10),
+          QueryIdentityRecordVerifyRequestsByApproverReq(address: actualWalletAddress.address, offset: 0, limit: 10),
         ),
         throwsA(isA<DioConnectException>()),
       );

@@ -52,13 +52,13 @@ class AccountTileCopyWrapper extends StatelessWidget {
           ),
           const SizedBox(width: 8),
           CopyButton(
-            value: walletAddress.bech32Address,
+            value: walletAddress.address,
             notificationText: S.of(context).toastPublicAddressCopied,
             size: 20,
           ),
           const SizedBox(width: 6),
           KiraToolTip(
-            message: walletAddress.bech32Address,
+            message: walletAddress.address,
             child: const Icon(
               Icons.info_outline,
               color: DesignColors.white2,

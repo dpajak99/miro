@@ -51,9 +51,9 @@ class _StakingMsgUndelegateFormPreviewState extends State<StakingMsgUndelegateFo
       children: <Widget>[
         TxInputPreview(
           label: S.of(context).txHintUnstakeBy,
-          value: msgUndelegateModel.delegatorWalletAddress.bech32Address,
+          value: msgUndelegateModel.delegatorWalletAddress.address,
           icon: KiraIdentityAvatar(
-            address: msgUndelegateModel.delegatorWalletAddress.bech32Address,
+            address: msgUndelegateModel.delegatorWalletAddress.address,
             size: 45,
           ),
         ),
@@ -62,7 +62,7 @@ class _StakingMsgUndelegateFormPreviewState extends State<StakingMsgUndelegateFo
           label: S.of(context).txHintUnstakeFrom,
           value: widget.moniker,
           icon: KiraIdentityAvatar(
-            address: widget.validatorWalletAddress.bech32Address,
+            address: widget.validatorWalletAddress.address,
             size: 45,
           ),
         ),

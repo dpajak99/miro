@@ -61,7 +61,7 @@ void main() {
         key: 'username',
         value: 'foobar',
         verifiersAddresses: <WalletAddress>[
-          WalletAddress.fromBech32('kira177lwmjyjds3cy7trers83r4pjn3dhv8zrqk9dl'),
+          WalletAddress.fromAddress('kira177lwmjyjds3cy7trers83r4pjn3dhv8zrqk9dl'),
         ],
         pendingVerifiersAddresses: const <WalletAddress>[],
         dateTime: null,
@@ -83,7 +83,7 @@ void main() {
         value: 'foobar',
         verifiersAddresses: const <WalletAddress>[],
         pendingVerifiersAddresses: <WalletAddress>[
-          WalletAddress.fromBech32('kira177lwmjyjds3cy7trers83r4pjn3dhv8zrqk9dl'),
+          WalletAddress.fromAddress('kira177lwmjyjds3cy7trers83r4pjn3dhv8zrqk9dl'),
         ],
         dateTime: null,
       );

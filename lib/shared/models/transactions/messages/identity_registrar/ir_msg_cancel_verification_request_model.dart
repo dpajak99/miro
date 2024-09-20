@@ -20,14 +20,14 @@ class IRMsgCancelVerificationRequestModel extends ATxMsgModel {
   factory IRMsgCancelVerificationRequestModel.fromDto(MsgCancelIdentityRecordsVerifyRequest msgCancelIdentityRecordsVerifyRequest) {
     return IRMsgCancelVerificationRequestModel(
       verifyRequestId: msgCancelIdentityRecordsVerifyRequest.verifyRequestId,
-      walletAddress: WalletAddress.fromBech32(msgCancelIdentityRecordsVerifyRequest.executor.value),
+      walletAddress: WalletAddress.fromAddress(msgCancelIdentityRecordsVerifyRequest.executor.value),
     );
   }
 
   @override
   MsgCancelIdentityRecordsVerifyRequest toMsgDto() {
     return MsgCancelIdentityRecordsVerifyRequest(
-      executor: CosmosAccAddress(walletAddress.bech32Address),
+      executor: CosmosAccAddress(walletAddress.address),
       verifyRequestId: verifyRequestId,
     );
   }

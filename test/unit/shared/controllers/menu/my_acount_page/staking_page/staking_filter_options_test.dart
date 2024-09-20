@@ -16,13 +16,13 @@ Future<void> main() async {
   await TestUtils.setupNetworkModel(networkUri: Uri.parse('https://healthy.kira.network/'));
 
   final ValidatorSimplifiedModel validatorSimplifiedModel1 = ValidatorSimplifiedModel(
-    walletAddress: WalletAddress.fromBech32('kira1ymx5gpvswq0cmj6zkdxwa233sdgq2k5zzfge8w'),
+    walletAddress: WalletAddress.fromAddress('kira1ymx5gpvswq0cmj6zkdxwa233sdgq2k5zzfge8w'),
     moniker: 'GENESIS VALIDATOR',
     website: 'https://www.wp.pl/',
   );
 
   final ValidatorSimplifiedModel validatorSimplifiedModel2 = ValidatorSimplifiedModel(
-    walletAddress: WalletAddress.fromBech32('kira1qffxre9m4dakekdqlsz9pez95crytqj6q8h457'),
+    walletAddress: WalletAddress.fromAddress('kira1qffxre9m4dakekdqlsz9pez95crytqj6q8h457'),
     moniker: 'EXODUS VALIDATOR',
     website: 'https://www.wp.pl/',
   );

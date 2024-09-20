@@ -31,7 +31,7 @@ class StakingListController implements IListController<ValidatorStakingModel> {
   Future<PageData<ValidatorStakingModel>> getPageData(PaginationDetailsModel paginationDetailsModel, {bool forceRequestBool = false}) async {
     PageData<ValidatorStakingModel> stakingPageData = await _queryDelegationsService.getValidatorStakingModelList(
       QueryDelegationsReq(
-        delegatorAddress: walletAddress.bech32Address,
+        delegatorAddress: walletAddress.address,
         offset: paginationDetailsModel.offset,
         limit: paginationDetailsModel.limit,
       ),

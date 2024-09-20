@@ -31,7 +31,7 @@ class QueryBalanceService implements _IQueryBalanceService {
   Future<BalanceModel> getBalanceByToken(WalletAddress walletAddress, TokenAliasModel tokenAliasModel) async {
     // TODO(dominik): Temporary solution, should be replaced with a proper query to INTERX
     PageData<BalanceModel> allBalancesPageData = await getBalanceModelList(QueryBalanceReq(
-      address: walletAddress.bech32Address,
+      address: walletAddress.address,
       offset: 0,
       limit: 500,
     ));

@@ -10,7 +10,7 @@ class QueryStakingPoolReq extends Equatable {
 
   Map<String, dynamic> toJson() {
     return <String, dynamic>{
-      'validatorAddress': validatorWalletAddress?.bech32Address,
+      'validatorAddress': validatorWalletAddress?.address,
     };
   }
 

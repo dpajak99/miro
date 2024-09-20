@@ -31,7 +31,7 @@ class UndelegationListController implements IListController<UndelegationModel> {
   Future<PageData<UndelegationModel>> getPageData(PaginationDetailsModel paginationDetailsModel, {bool forceRequestBool = false}) async {
     PageData<UndelegationModel> undelegationPageData = await _queryUndelegationsService.getUndelegationModelList(
       QueryUndelegationsReq(
-        undelegatorAddress: walletAddress.bech32Address,
+        undelegatorAddress: walletAddress.address,
         offset: paginationDetailsModel.offset,
         limit: paginationDetailsModel.limit,
       ),

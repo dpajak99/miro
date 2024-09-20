@@ -32,7 +32,7 @@ class BalancesListController implements IListController<BalanceModel> {
     if (favouriteBalances.isNotEmpty) {
       // TODO(dominik): implement request Balances by name
       PageData<BalanceModel> balancesPageData = await queryBalanceService.getBalanceModelList(
-        QueryBalanceReq(address: walletAddress.bech32Address, offset: 0, limit: 500),
+        QueryBalanceReq(address: walletAddress.address, offset: 0, limit: 500),
         forceRequestBool: forceRequestBool,
       );
 
@@ -46,7 +46,7 @@ class BalancesListController implements IListController<BalanceModel> {
   @override
   Future<PageData<BalanceModel>> getPageData(PaginationDetailsModel paginationDetailsModel, {bool forceRequestBool = false}) async {
     PageData<BalanceModel> balancesPageData = await queryBalanceService.getBalanceModelList(
-      QueryBalanceReq(address: walletAddress.bech32Address, limit: paginationDetailsModel.limit, offset: paginationDetailsModel.offset),
+      QueryBalanceReq(address: walletAddress.address, limit: paginationDetailsModel.limit, offset: paginationDetailsModel.offset),
       forceRequestBool: forceRequestBool,
     );
 

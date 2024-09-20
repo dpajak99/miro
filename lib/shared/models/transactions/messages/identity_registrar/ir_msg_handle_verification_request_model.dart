@@ -23,7 +23,7 @@ class IRMsgHandleVerificationRequestModel extends ATxMsgModel {
     return IRMsgHandleVerificationRequestModel(
       approvalStatusBool: msgHandleIdentityRecordsVerifyRequest.yes,
       verifyRequestId: msgHandleIdentityRecordsVerifyRequest.verifyRequestId.toString(),
-      walletAddress: WalletAddress.fromBech32(msgHandleIdentityRecordsVerifyRequest.verifier.value),
+      walletAddress: WalletAddress.fromAddress(msgHandleIdentityRecordsVerifyRequest.verifier.value),
     );
   }
 
@@ -31,7 +31,7 @@ class IRMsgHandleVerificationRequestModel extends ATxMsgModel {
   MsgHandleIdentityRecordsVerifyRequest toMsgDto() {
     return MsgHandleIdentityRecordsVerifyRequest(
       verifyRequestId: int.parse(verifyRequestId),
-      verifier: CosmosAccAddress(walletAddress.bech32Address),
+      verifier: CosmosAccAddress(walletAddress.address),
       yes: approvalStatusBool,
     );
   }

@@ -50,7 +50,7 @@ class ValidatorModel extends AListItem {
       streak: validator.streak,
       stakingPoolStatus: StakingPoolStatus.fromString(validator.stakingPoolStatus),
       validatorStatus: validatorStatus,
-      walletAddress: WalletAddress.fromBech32ValidatorsPage(validator.address),
+      walletAddress: WalletAddress.fromValidatorString(validator.address),
       valkey: validator.valkey,
       contact: validator.contact,
       description: validator.description,
@@ -61,7 +61,7 @@ class ValidatorModel extends AListItem {
   }
 
   @override
-  String get cacheId => walletAddress.bech32Address;
+  String get cacheId => walletAddress.address;
 
   @override
   bool get isFavourite => _favourite;

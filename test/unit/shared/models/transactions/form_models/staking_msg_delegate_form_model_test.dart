@@ -8,7 +8,7 @@ import 'package:miro/shared/models/transactions/messages/staking/staking_msg_del
 import 'package:miro/shared/models/wallet/wallet_address.dart';
 
 Future<void> main() async {
-  WalletAddress actualDelegatorWalletAddress = WalletAddress.fromBech32('kira143q8vxpvuykt9pq50e6hng9s38vmy844n8k9wx');
+  WalletAddress actualDelegatorWalletAddress = WalletAddress.fromAddress('kira143q8vxpvuykt9pq50e6hng9s38vmy844n8k9wx');
   String actualValkey = 'kiravaloper1c6slygj2tx7hzm0mn4qeflqpvngj73c2cw7fh7';
   List<TokenAmountModel> actualTokenAmountModels = <TokenAmountModel>[
     TokenAmountModel(

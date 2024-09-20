@@ -40,16 +40,16 @@ class IRMsgRequestVerificationModel extends ATxMsgModel {
         defaultDenominationAmount: Decimal.fromBigInt(msgRequestIdentityRecordsVerify.tip.amount),
         tokenAliasModel: TokenAliasModel.local(msgRequestIdentityRecordsVerify.tip.denom),
       ),
-      verifierWalletAddress: WalletAddress.fromBech32(msgRequestIdentityRecordsVerify.verifier.value),
-      walletAddress: WalletAddress.fromBech32(msgRequestIdentityRecordsVerify.address.value),
+      verifierWalletAddress: WalletAddress.fromAddress(msgRequestIdentityRecordsVerify.verifier.value),
+      walletAddress: WalletAddress.fromAddress(msgRequestIdentityRecordsVerify.address.value),
     );
   }
 
   @override
   MsgRequestIdentityRecordsVerify toMsgDto() {
     return MsgRequestIdentityRecordsVerify(
-      address: CosmosAccAddress(walletAddress.bech32Address),
-      verifier: CosmosAccAddress(verifierWalletAddress.bech32Address),
+      address: CosmosAccAddress(walletAddress.address),
+      verifier: CosmosAccAddress(verifierWalletAddress.address),
       recordIds: recordIds,
       tip: CosmosCoin(
         denom: tipTokenAmountModel.tokenAliasModel.defaultTokenDenominationModel.name,
@@ -74,7 +74,7 @@ class IRMsgRequestVerificationModel extends ATxMsgModel {
   }
 
   @override
-  String getSubtitle(TxDirectionType txDirectionType) => verifierWalletAddress.bech32Address;
+  String getSubtitle(TxDirectionType txDirectionType) => verifierWalletAddress.address;
 
   @override
   String getTitle(BuildContext context, TxDirectionType txDirectionType) => S.of(context).txMsgRequestIdentityRecordsVerify;

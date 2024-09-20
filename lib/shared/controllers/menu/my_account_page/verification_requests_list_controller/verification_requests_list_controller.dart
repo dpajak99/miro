@@ -31,7 +31,7 @@ class VerificationRequestsListController implements IListController<IRInboundVer
   Future<PageData<IRInboundVerificationRequestModel>> getPageData(PaginationDetailsModel paginationDetailsModel, {bool forceRequestBool = false}) async {
     PageData<IRInboundVerificationRequestModel> irVerificationRequestModelList = await identityRecordsService.getInboundVerificationRequests(
       QueryIdentityRecordVerifyRequestsByApproverReq(
-        address: walletAddress.bech32Address,
+        address: walletAddress.address,
         limit: paginationDetailsModel.limit,
         offset: paginationDetailsModel.offset,
       ),
